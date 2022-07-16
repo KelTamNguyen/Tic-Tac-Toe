@@ -2,9 +2,8 @@
     --game-font: 'Press Start 2P', cursive;
     --clr-neon-blue: #4dddff;
     --clr-neon-pink: hsl(317 100% 54%); 
-    --clr-bg: #141D26;
-    --clr-p1: dodgerblue;
-    --clr-p2: red;
+    /* --clr-bg: #141D26; */
+    --clr-bg: #0f172a;
 }
 
 @font-face {
@@ -54,7 +53,7 @@ main {
 
 #banner-txt {
     font-family: 'led-board';
-    color: var(--clr-p1);
+    color: var(--clr-neon-blue);
     font-size: 2rem;
     margin: 0 0 1.5rem 0;
 }
@@ -62,8 +61,9 @@ main {
 #gameboard {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    width: 378px;
+    /* width: 378px; */
     /* border: 5px solid white; */
+    gap: 12px;
 }
 
 #btn-group {
@@ -71,7 +71,29 @@ main {
     display: flex;
 }
 
+#btn-group a {
+    text-decoration: none;
+}
+
 #round {
+    color: white;
+}
+
+#rematch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--clr-neon-pink);
+    border: var(--clr-neon-pink) 0.125em solid;
+    padding: 0.25em 1.25em;
+    border-radius: 0.25em;
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon-pink),  0 0 0.5em 0 var(--clr-neon-pink);
+    font-size: 1rem;
+}
+
+#rematch:hover, #rematch:focus {
+    background: var(--clr-neon-pink);
     color: white;
 }
 
@@ -88,8 +110,4 @@ main {
     font-family: var(--game-font);
     font-size: 100px;
     color: var(--clr-p1);
-}
-
-.tile:hover {
-    background: var(--clr-neon-blue);
 }
