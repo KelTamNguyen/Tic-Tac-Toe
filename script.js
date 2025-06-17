@@ -45,6 +45,7 @@ const displayController = (() => {
             tile.textContent = '';
             tile.style.border = '4px solid white';
             tile.style.boxShadow = '';
+            setBanner(`Player X's Turn`, '#4dddff');
             gameboard.reset();
             game.reset();
             console.log(gameboard.tiles);
@@ -116,6 +117,7 @@ const game = (() => {
             [2, 4, 6],
         ];
 
+        // find a set of combinations that includes the current index, and returns whether or not there exists one combination in that set where every entry of that combination has the current players symbol.
         return winConditions
             .filter((combination) => combination.includes(tileIndex))
             .some((possibleCombination) =>
